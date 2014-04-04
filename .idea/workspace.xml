@@ -91,19 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientDAO.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ClientDAO.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="26" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-              <folding />
+            <state line="20" column="17" selection-start="546" selection-end="546" vertical-scroll-proportion="0.42713568" vertical-offset="0" max-vertical-offset="796">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentDAO.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ComponentDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ComponentDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="73" selection-start="581" selection-end="581" vertical-scroll-proportion="0.42713568" vertical-offset="0" max-vertical-offset="796">
+            <state line="20" column="73" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ProductTypeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/WorkTypeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ComponentDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java" />
       </list>
     </option>
   </component>
@@ -785,16 +788,16 @@
       <updated>1396531664270</updated>
       <workItem from="1396531667138" duration="4426000" />
       <workItem from="1396608043154" duration="7475000" />
-      <workItem from="1396619126281" duration="512000" />
+      <workItem from="1396619126281" duration="1331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12413000" />
+    <option name="totallyTimeSpent" value="13232000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -815,7 +818,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -878,7 +881,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="26" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1096,20 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/BidDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Component.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="35" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="833">
@@ -1121,17 +1112,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/WorkTypeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="71" selection-start="570" selection-end="570" vertical-scroll-proportion="0.42606518" vertical-offset="0" max-vertical-offset="798">
+        <state line="20" column="71" selection-start="570" selection-end="570" vertical-scroll-proportion="0.42713568" vertical-offset="0" max-vertical-offset="796">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,9 +1126,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ProductTypeDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ComponentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+        <state line="20" column="73" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/BidDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <folding />
         </state>
       </provider>
@@ -1156,9 +1149,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ComponentDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ProductTypeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="73" selection-start="581" selection-end="581" vertical-scroll-proportion="0.42713568" vertical-offset="0" max-vertical-offset="796">
+        <state line="21" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="17" selection-start="546" selection-end="546" vertical-scroll-proportion="0.42713568" vertical-offset="0" max-vertical-offset="796">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

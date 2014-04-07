@@ -50,5 +50,28 @@ public enum Role {
         return realValues;
     }
 
+    public static Role getRoleById(Integer id)
+    {
+        if (id.intValue() == 1)
+        {
+            return Role.ADMIN;
+        }
+        else if (id.intValue() == 2)
+        {
+            return Role.STORE;
+        }
+        else if (id.intValue() == 3)
+        {
+            return Role.SERVICE;
+        }
+        else if (id.intValue() == 4)
+        {
+            return Role.HEAD;
+        }
+        else
+        {
+            return Role.GUEST;
+        }
+    }
 
 }

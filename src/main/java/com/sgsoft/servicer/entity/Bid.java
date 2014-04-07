@@ -17,7 +17,7 @@ public class Bid {
     private Date diagnosticIssueDate;
     private Date diagnosticReturnDate;
     private String diagnosticResult;
-    private boolean isResult;
+    private Boolean isGuarantee;
     private Date termToService;
     private Date serviceIssueDate;
     private Date serviceReturnDate;
@@ -118,12 +118,12 @@ public class Bid {
         this.diagnosticResult = diagnosticResult;
     }
 
-    public boolean isResult() {
-        return isResult;
+    public Boolean isGuarantee() {
+        return isGuarantee;
     }
 
-    public void setResult(boolean isResult) {
-        this.isResult = isResult;
+    public void setGuarantee(Boolean isGuarantee) {
+        this.isGuarantee = isGuarantee;
     }
 
     public Date getTermToService() {
@@ -204,5 +204,23 @@ public class Bid {
 
     public void setWorkTypeList(List<WorkType> workTypeList) {
         this.workTypeList = workTypeList;
+    }
+
+    public Double getBidPrice()
+    {
+        double componentPrice = 0;
+        double workPrice = 0;
+
+        for (Component component:componentList)
+        {
+            componentPrice+=component.getPrice().doubleValue();
+        }
+
+        for(WorkType workType:workTypeList)
+        {
+            workPrice += workType.getPrice().doubleValue();
+        }
+
+        return componentPrice+workPrice;
     }
 }

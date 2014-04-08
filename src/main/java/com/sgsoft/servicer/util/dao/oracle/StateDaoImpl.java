@@ -31,7 +31,7 @@ public class StateDaoImpl extends DAOCloseHelper implements StateDAO {
             " = ? WHERE " + STATE_ID_VALUE + " = ?";
     protected static final String GET_VISIBLE_STATES = "SELECT si."+STATE_ID_VALUE+", si."+STATE_NAME_VALUE+", si."+ STATE_RATE_VALUE+
             " FROM States_visible sv JOIN State_info si ON sv."+STATE_ID_VALUE+" = si."+STATE_ID_VALUE+" WHERE sv."+USER_RIGHT_VALUE+" = (SELECT Right_id FROM User_right WHERE Right_name = ?)";
-
+    protected static final String ADD_VISIBLE_STATE_TO_ROLE = "INSERT INTO States_visible  VALUES(?, (SELECT Right_id FROM User_right WHERE Right_name = ?))";
     private DBManager dbManager;
 
     public StateDaoImpl(DBManager dbManager)
@@ -195,7 +195,26 @@ public class StateDaoImpl extends DAOCloseHelper implements StateDAO {
 
     @Override
     public int addVisibleStateToRole(Role role, State state) throws DBException {
-        //ToDo
-        return 0;
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            preparedStatement = dbManager.preparedStatement(ADD_VISIBLE_STATE_TO_ROLE);
+            preparedStatement.setInt(1, state.getId());
+            preparedStatement.setString(2, role.getName());
+            result = preparedStatement.executeUpdate();
+            dbManager.commit();
+        }
+        catch (SQLException ex)
+        {
+            dbManager.rollback();
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
+        return result;
     }
+
 }

@@ -67,19 +67,16 @@
       <file leaf-file-name="UserDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="153" selection-start="1350" selection-end="1404" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3944">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5695#5701#0" expanded="true" />
-              </folding>
+            <state line="30" column="153" selection-start="1350" selection-end="1404" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/db/DBManager.java">
+      <file leaf-file-name="UserDAO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+            <state line="14" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
               <folding />
             </state>
           </provider>
@@ -88,10 +85,8 @@
       <file leaf-file-name="BidDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/BidDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="565" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="18" column="8" selection-start="565" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1003">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,10 +94,17 @@
       <file leaf-file-name="ClientDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ClientDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="491" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="15" column="8" selection-start="491" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDaoImpl.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/OrderDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="8" selection-start="532" selection-end="544" vertical-scroll-proportion="0.16708542" vertical-offset="37" max-vertical-offset="833">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,21 +112,8 @@
       <file leaf-file-name="ComponentDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ComponentDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="489" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderDaoImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/OrderDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="8" selection-start="532" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="952">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="15" column="8" selection-start="489" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="748">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,33 +121,22 @@
       <file leaf-file-name="ProductTypeDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ProductTypeDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="499" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="748">
+            <state line="135" column="22" selection-start="4665" selection-end="4665" vertical-scroll-proportion="0.0" vertical-offset="1852" max-vertical-offset="2635">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4890#4903#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StateDaoImpl.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StateDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/StateDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="5" selection-start="6670" selection-end="6670" vertical-scroll-proportion="4.083014" vertical-offset="84" max-vertical-offset="3519">
+            <state line="32" column="77" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0" vertical-offset="1223" max-vertical-offset="3842">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3224#3231#0" expanded="true" />
-                <element signature="e#6058#6065#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/StateDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3382#3389#0" expanded="true" />
+                <element signature="e#6216#6223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,9 +145,20 @@
       <file leaf-file-name="WorkTypeDaoImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/WorkTypeDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="484" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+            <state line="28" column="11" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5143#5153#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Component.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="35" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+              <folding>
+                <element signature="e#335#336#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -216,11 +205,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/impl/OrderDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/impl/ProductTypeDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/impl/StateDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/WorkTypeDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/StateDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/StateDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/WorkTypeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ProductTypeDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -382,8 +372,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -580,6 +568,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -941,41 +931,42 @@
       <workItem from="1396619126281" duration="1331000" />
       <workItem from="1396783430871" duration="315000" />
       <workItem from="1396869808230" duration="12429000" />
+      <workItem from="1396957102773" duration="8473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25976000" />
+    <option name="totallyTimeSpent" value="34449000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2197092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2538553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18957704" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18957704" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1011,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/BidDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,9 +1057,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/StateDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="17" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="476">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1099,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="35" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="986">
-          <folding />
+          <folding>
+            <element signature="e#359#360#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,13 +1169,6 @@
         <state line="9" column="0" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ClientDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="17" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
@@ -1207,13 +1193,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/ComponentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="57" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
@@ -1278,42 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/BidDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="565" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/OrderDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="532" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="952">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ProductTypeDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="499" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="748">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/WorkTypeDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="484" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/db/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="17" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
@@ -1321,31 +1264,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ClientDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="491" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="748">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ComponentDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="8" selection-start="489" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="748">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="153" selection-start="1350" selection-end="1404" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3944">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5695#5701#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,15 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="332" selection-end="332" vertical-scroll-proportion="0.298995" vertical-offset="0" max-vertical-offset="796">
-          <folding>
-            <element signature="e#359#360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="47" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="884">
@@ -1383,21 +1296,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/StateDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+        <state line="25" column="80" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="35" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="153" selection-start="1350" selection-end="1404" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="3944">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/BidDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="8" selection-start="565" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/WorkTypeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="11" selection-start="1245" selection-end="1245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
+          <folding>
+            <element signature="e#5143#5153#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/StateDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="5" selection-start="6670" selection-end="6670" vertical-scroll-proportion="4.083014" vertical-offset="84" max-vertical-offset="3519">
+        <state line="32" column="77" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="3842">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3224#3231#0" expanded="true" />
-            <element signature="e#6058#6065#0" expanded="true" />
+            <element signature="e#3382#3389#0" expanded="true" />
+            <element signature="e#6216#6223#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ProductTypeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="22" selection-start="4665" selection-end="4665" vertical-scroll-proportion="0.0" vertical-offset="1852" max-vertical-offset="2635">
+          <folding>
+            <element signature="e#4890#4903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/ClientDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="8" selection-start="491" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/entity/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="332" selection-end="332" vertical-scroll-proportion="0.298995" vertical-offset="0" max-vertical-offset="796">
+          <folding>
+            <element signature="e#359#360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sgsoft/servicer/util/dao/oracle/OrderDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="8" selection-start="532" selection-end="544" vertical-scroll-proportion="0.16708542" vertical-offset="37" max-vertical-offset="833">
+          <folding />
         </state>
       </provider>
     </entry>

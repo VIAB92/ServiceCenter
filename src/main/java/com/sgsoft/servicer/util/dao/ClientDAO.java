@@ -20,4 +20,6 @@ public interface ClientDAO {
 
     public Client findByUniqueParams(String name, String email, String telephone) throws DBException;
 
+    public List<Client> getAllClients() throws DBException;
+
 }

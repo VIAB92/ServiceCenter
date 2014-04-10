@@ -21,12 +21,17 @@ public class WorkTypeDaoImpl extends DAOCloseHelper implements WorkTypeDAO {
     private static final String TYPE_ID_VALUE = "TYPE_ID";
     private static final String TYPE_NAME_VALUE = "TYPE_NAME";
     private static final String TYPE_PRICE_VALUE = "PRICE";
+    private static final String WORK_ID_FOR_BID_VALUE = "WORK_ID";
+    private static final String BID_ID_VALUE = "BID_ID";
 
     private static final String CREATE_WORK_TYPE_QUERY = "INSERT INTO Work_type VALUES(work_seq.NEXTVAL, ?, ?)";
     private static final String GET_BY_ID_QUERY = "SELECT * FROM Work_type WHERE "+TYPE_ID_VALUE+" = ?";
     private static final String DELETE_BY_ID_QUERY = "DELETE FROM Work_type WHERE "+TYPE_ID_VALUE+" = ?";
     private static final String GET_ALL_TYPE_QUERY = "SELECT * FROM Work_type ORDER BY "+TYPE_NAME_VALUE;
     private static final String UPDATE_QUERY = "UPDATE Work_type SET "+TYPE_NAME_VALUE+" = ?, "+TYPE_PRICE_VALUE+" = ? WHERE "+TYPE_ID_VALUE+" = ?";
+    private static final String ADD_TYPE_TO_BID_QUERY = "INSERT INTO Work_economics VALUES(?, ?)";
+    private static final String REMOVE_TYPE_FROM_BID_QUERY = "DELETE FROM Work_economics WHERE "+BID_ID_VALUE+" = ? AND "+WORK_ID_FOR_BID_VALUE+" = ?";
+    private static final String GET_TYPES_BY_BID_QUERY = "SELECT "+WORK_ID_FOR_BID_VALUE+" FROM Work_economics WHRE "+BID_ID_VALUE+" = ?";
 
     private DBManager dbManager;
 
@@ -163,5 +168,85 @@ public class WorkTypeDaoImpl extends DAOCloseHelper implements WorkTypeDAO {
             closeResultSet(resultSet);
         }
         return workTypes;
+    }
+
+    @Override
+    public int addWorkTypeToBid(Integer bidId, Integer workTypeId) throws DBException {
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            preparedStatement = dbManager.preparedStatement(ADD_TYPE_TO_BID_QUERY);
+            preparedStatement.setInt(1, bidId);
+            preparedStatement.setInt(2, workTypeId);
+            result = preparedStatement.executeUpdate();
+            dbManager.commit();
+        }
+        catch (SQLException ex)
+        {
+            dbManager.rollback();
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
+        return result;
+    }
+
+    @Override
+    public int removeWorkTypeFromBid(Integer bidId, Integer workTypeId) throws DBException {
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            preparedStatement = dbManager.preparedStatement(REMOVE_TYPE_FROM_BID_QUERY);
+            preparedStatement.setInt(1, bidId);
+            preparedStatement.setInt(2, workTypeId);
+            result = preparedStatement.executeUpdate();
+            dbManager.commit();
+        }
+        catch (SQLException ex)
+        {
+            dbManager.rollback();
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
+        return result;
+    }
+
+    @Override
+    public List<WorkType> getWorkTypesByBid(Integer bidId) throws DBException {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<WorkType> workTypes = new ArrayList<WorkType>();
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_TYPES_BY_BID_QUERY);
+            preparedStatement.setInt(1, bidId);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                workTypes.add(getWorkTypeEntityById(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+            closeResultSet(resultSet);
+        }
+        return workTypes;
+    }
+
+    private WorkType getWorkTypeEntityById(ResultSet resultSet) throws DBException, SQLException {
+        int workTypeId = resultSet.getInt(WORK_ID_FOR_BID_VALUE);
+        WorkType workType = this.getById(workTypeId);
+        return workType;
     }
 }

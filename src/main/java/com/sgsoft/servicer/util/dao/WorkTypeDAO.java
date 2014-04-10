@@ -20,4 +20,9 @@ public interface WorkTypeDAO {
 
     public List<WorkType> getWorkTypesOrderByName() throws DBException;
 
+    public int addWorkTypeToBid(Integer bidId, Integer workTypeId) throws DBException;
+
+    public int removeWorkTypeFromBid(Integer bidId, Integer workTypeId) throws DBException;
+
+    public List<WorkType> getWorkTypesByBid(Integer bidId) throws DBException;
 }

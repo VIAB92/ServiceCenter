@@ -1,6 +1,7 @@
 package com.sgsoft.servicer.util.dao;
 
 import com.sgsoft.servicer.db.exception.DBException;
+import com.sgsoft.servicer.entity.Component;
 import com.sgsoft.servicer.entity.Order;
 import com.sgsoft.servicer.entity.User;
 
@@ -25,5 +26,9 @@ public interface OrderDAO {
     public List<Order> getByUser(User user) throws DBException;
 
     public List<Order> getOrderListOrderById() throws DBException;
+
+    public int addComponentToOrder(Integer orderId, Integer componentId) throws DBException;
+
+    public int deleteComponentFromOrder(Integer orderId, Integer componentId) throws DBException;
 
 }

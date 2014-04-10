@@ -1,9 +1,7 @@
 package com.sgsoft.servicer.util.dao;
 
 import com.sgsoft.servicer.db.exception.DBException;
-import com.sgsoft.servicer.entity.Bid;
-import com.sgsoft.servicer.entity.Client;
-import com.sgsoft.servicer.entity.State;
+import com.sgsoft.servicer.entity.*;
 
 import java.util.Date;
 import java.util.List;

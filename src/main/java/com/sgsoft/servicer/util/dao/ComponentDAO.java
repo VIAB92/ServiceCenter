@@ -20,4 +20,12 @@ public interface ComponentDAO {
 
     public List<Component> getComponentsOrderByName() throws DBException;
 
+    public List<Component> getComponentsByOrderId(Integer id) throws DBException;
+
+    public List<Component> getComponentsByBid(Integer bidId) throws DBException;
+
+    public int addComponentToBid(Integer bidId, Integer componentId) throws DBException;
+
+    public int removeComponentFromBid(Integer bidId, Integer componentId) throws DBException;
+
 }

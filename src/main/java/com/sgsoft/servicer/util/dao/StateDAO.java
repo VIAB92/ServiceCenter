@@ -1,6 +1,7 @@
 package com.sgsoft.servicer.util.dao;
 
 import com.sgsoft.servicer.db.exception.DBException;
+import com.sgsoft.servicer.entity.BidState;
 import com.sgsoft.servicer.entity.Role;
 import com.sgsoft.servicer.entity.State;
 
@@ -24,5 +25,9 @@ public interface StateDAO {
     public List<State> getStatesByUserRole(Role role) throws DBException;
 
     public int addVisibleStateToRole(Role role, State state) throws DBException;
+
+    public int addBidStateToBid(Integer bidId, BidState bidState) throws DBException;
+
+    public List<BidState> getBidStatesByBid(Integer bidId) throws DBException;
 
 }

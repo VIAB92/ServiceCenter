@@ -35,6 +35,9 @@ public class ComponentDaoImpl extends DAOCloseHelper implements ComponentDAO {
     private static final String ADD_COMPONENT_TO_BID_QUERY = "INSERT INTO Component_economics VALUES(?, ?)";
     private static final String REMOVE_COMPONENT_FROM_BID_QUERY = "DELETE FROM Component_economics WHERE "+BID_ID_VALUE+" = ? AND "+ORDER_ID_VALUE+" = ?";
     private static final String GET_COMPONENTS_BY_BID_QUERY = "SELECT * FROM Component_economics WHERE "+BID_ID_VALUE+" = ?";
+    private static final String ADD_COMPONENTS_QUERY = "INSERT INTO Order_component VALUES(?, ?)";
+    private static final String DELETE_COMPONENTS_QUERY = "DELETE FROM Order_component WHERE "+ORDER_ID_VALUE+" = ? AND "+
+            COMPONENT_ID_VALUE + " = ?";
 
     private DBManager dbManager;
 
@@ -259,6 +262,54 @@ public class ComponentDaoImpl extends DAOCloseHelper implements ComponentDAO {
             dbManager.commit();
             preparedStatement = dbManager.preparedStatement(REMOVE_COMPONENT_FROM_BID_QUERY);
             preparedStatement.setInt(1, bidId);
+            preparedStatement.setInt(2, componentId);
+            result = preparedStatement.executeUpdate();
+            dbManager.commit();
+        }
+        catch (SQLException ex)
+        {
+            dbManager.rollback();
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
+        return result;
+    }
+
+    @Override
+    public int addComponentToOrder(Integer orderId, Integer componentId) throws DBException {
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            preparedStatement = dbManager.preparedStatement(ADD_COMPONENTS_QUERY);
+            preparedStatement.setInt(1, orderId);
+            preparedStatement.setInt(2, componentId);
+            result = preparedStatement.executeUpdate();
+            dbManager.commit();
+        }
+        catch (SQLException ex)
+        {
+            dbManager.rollback();
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
+        return  result;
+    }
+
+    @Override
+    public int removeComponentFromOrder(Integer orderId, Integer componentId) throws DBException {
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            preparedStatement = dbManager.preparedStatement(DELETE_COMPONENTS_QUERY);
+            preparedStatement.setInt(1, orderId);
             preparedStatement.setInt(2, componentId);
             result = preparedStatement.executeUpdate();
             dbManager.commit();

@@ -12,16 +12,15 @@ public class Bid {
     private Client client;
     private ProductType productType;
     private String serialNumber;
-    private String notes;
     private String defect;
     private Date diagnosticIssueDate;
     private Date diagnosticReturnDate;
     private String diagnosticResult;
     private Boolean isGuarantee;
-    private Date termToService;
+    private int termToService;
     private Date serviceIssueDate;
     private Date serviceReturnDate;
-    private Date serviceResult;
+    private String serviceResult;
     private String clientResult;
     private String declarationNumber;
     private String officeNumber;
@@ -78,14 +77,6 @@ public class Bid {
         this.serialNumber = serialNumber;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public String getDefect() {
         return defect;
     }
@@ -126,11 +117,11 @@ public class Bid {
         this.isGuarantee = isGuarantee;
     }
 
-    public Date getTermToService() {
+    public int getTermToService() {
         return termToService;
     }
 
-    public void setTermToService(Date termToService) {
+    public void setTermToService(int termToService) {
         this.termToService = termToService;
     }
 
@@ -150,11 +141,11 @@ public class Bid {
         this.serviceReturnDate = serviceReturnDate;
     }
 
-    public Date getServiceResult() {
+    public String getServiceResult() {
         return serviceResult;
     }
 
-    public void setServiceResult(Date serviceResult) {
+    public void setServiceResult(String serviceResult) {
         this.serviceResult = serviceResult;
     }
 

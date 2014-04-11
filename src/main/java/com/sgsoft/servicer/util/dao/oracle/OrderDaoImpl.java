@@ -36,9 +36,6 @@ public class OrderDaoImpl extends DAOCloseHelper implements OrderDAO {
     private static final String GET_BY_DATE_QUERY = "SELECT * FROM Order_info WHERE "+ORDER_DATE_VALUE+" = ?";
     private static final String GET_BY_USER_QUERY = "SELECT * FROM Order_info WHERE "+ORDER_USER_ID_VALUE+" = ?";
     private static final String GET_ALL_QUERY = "SELECT * FROM Order_info ORDER BY "+ORDER_ID_VALUE;
-    private static final String ADD_COMPONENTS_QUERY = "INSERT INTO Order_component VALUES(?, ?)";
-    private static final String DELETE_COMPONENTS_QUERY = "DELETE FROM Order_component WHERE "+ORDER_ID_VALUE+" = ? AND "+
-            COMPONENT_ID_VALUE + " = ?";
 
     private DBManager dbManager;
     private ComponentDAO componentDAO;
@@ -234,51 +231,4 @@ public class OrderDaoImpl extends DAOCloseHelper implements OrderDAO {
         return orders;
     }
 
-    @Override
-    public int addComponentToOrder(Integer orderId, Integer componentId) throws DBException {
-        PreparedStatement preparedStatement = null;
-        int result = 0;
-        try
-        {
-            dbManager.commit();
-            preparedStatement = dbManager.preparedStatement(ADD_COMPONENTS_QUERY);
-            preparedStatement.setInt(1, orderId);
-            preparedStatement.setInt(2, componentId);
-            result = preparedStatement.executeUpdate();
-            dbManager.commit();
-        }
-        catch (SQLException ex)
-        {
-            dbManager.rollback();
-            throw new DBException(ex.getMessage(), ex);
-        }
-        finally {
-            closeStatement(preparedStatement);
-        }
-        return result;
-    }
-
-    @Override
-    public int deleteComponentFromOrder(Integer orderId, Integer componentId) throws DBException {
-        PreparedStatement preparedStatement = null;
-        int result = 0;
-        try
-        {
-            dbManager.commit();
-            preparedStatement = dbManager.preparedStatement(DELETE_COMPONENTS_QUERY);
-            preparedStatement.setInt(1, orderId);
-            preparedStatement.setInt(2, componentId);
-            result = preparedStatement.executeUpdate();
-            dbManager.commit();
-        }
-        catch (SQLException ex)
-        {
-            dbManager.rollback();
-            throw new DBException(ex.getMessage(), ex);
-        }
-        finally {
-            closeStatement(preparedStatement);
-        }
-        return result;
-    }
 }

@@ -28,4 +28,8 @@ public interface ComponentDAO {
 
     public int removeComponentFromBid(Integer bidId, Integer componentId) throws DBException;
 
+    public int addComponentToOrder(Integer orderId, Integer componentId) throws DBException;
+
+    public int removeComponentFromOrder(Integer orderId, Integer componentId) throws DBException;
+
 }

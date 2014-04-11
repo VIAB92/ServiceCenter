@@ -108,12 +108,12 @@ CREATE TABLE Bid_state
 );
 
 CREATE TABLE Bid_final
-(	bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
+(	final_bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
 	client_result VARCHAR2(255),
 	declaration_name VARCHAR2(255),
 	office_name VARCHAR2(100),
 	notes VARCHAR2(255),
-	UNIQUE(bid_id)
+	UNIQUE(final_bid_id)
 );
 
 CREATE TABLE States_visible
@@ -127,21 +127,21 @@ CREATE TABLE Component_economics
 );
 
 CREATE TABLE Service
-(	bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
-	issue_date DATE,
-	return_date DATE,
+(	service_bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
+	service_issue_date DATE,
+	service_return_date DATE,
 	service_result VARCHAR2(255),
-	UNIQUE(bid_id)
+	UNIQUE(service_bid_id)
 );
 
 CREATE TABLE Diagnostic
-(	bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
-	issue_date DATE,
-	return_date DATE,
+(	diag_bid_id NUMBER REFERENCES Bid_main(bid_id) ON DELETE CASCADE,
+	diag_issue_date DATE,
+	diag_return_date DATE,
 	diagnostics_result VARCHAR2(255),
 	is_guarantee NUMBER(2),
 	term_in_days NUMBER(4),
-	UNIQUE(bid_id)
+	UNIQUE(diag_bid_id)
 );
 
 CREATE SEQUENCE user_seq

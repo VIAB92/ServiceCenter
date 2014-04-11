@@ -27,8 +27,4 @@ public interface OrderDAO {
 
     public List<Order> getOrderListOrderById() throws DBException;
 
-    public int addComponentToOrder(Integer orderId, Integer componentId) throws DBException;
-
-    public int deleteComponentFromOrder(Integer orderId, Integer componentId) throws DBException;
-
 }

@@ -52,6 +52,11 @@ public class BidDaoImpl extends DAOCloseHelper implements BidDAO {
     private static final String BID_OFFICE_NAME_VALUE = "OFFICE_NAME";
     private static final String BID_NOTES_VALUE = "NOTES";
 
+    //State
+    private static final String BID_STATE_TABLE = "Bid_state";
+    private static final String BID_DATE_CHANGED_VALUE = "date_changed";
+    private static final String STATE_ID_VALUE = "state_id";
+
     private static final String GET_BY_ID_QUERY = "SELECT * FROM "+TABLE_MAIN_NAME+" m JOIN "+TABLE_DIAGNOSTIC_NAME+
             "d ON m."+BID_ID_VALUE+" = d."+BID_ID_DIAG_VALUE+" JOIN "+TABLE_SERVICE_NAME+" s ON m."+BID_ID_VALUE+" = s."+BID_ID_SERVICE_VALUE+
             " JOIN "+TABLE_FINAL_NAME+" f ON m."+BID_ID_VALUE+" = f."+BID_ID_FINAL_VALUE+" WHERE m."+BID_ID_VALUE+" = ?";
@@ -67,11 +72,11 @@ public class BidDaoImpl extends DAOCloseHelper implements BidDAO {
             BID_PRODUCT_VALUE+" = ?, "+BID_SN_VALUE+" = ?, "+BID_DEFECT_VALUE+" = ? WHERE "+BID_ID_VALUE+" = ?";
     private static final String UPDATE_BID_DIAGNOSTIC_QUERY = "UPDATE "+TABLE_DIAGNOSTIC_NAME+" SET "+BID_DIAG_ISSUE_VALUE+" = ?, "+
             BID_DIAG_RETURN_VALUE+" = ?, "+BID_DIAG_RESULT_VALUE+" = ?, "+BID_GUARANTEE_VALUE+" = ?, "+BID_SERV_TERM_VALUE+" = ? WHERE "+
-            BID_ID_VALUE+" = ?";
+            BID_ID_DIAG_VALUE+" = ?";
     private static final String UPDATE_BID_SERVICE_QUERY = "UPDATE "+TABLE_SERVICE_NAME+" SET "+BID_SERV_ISSUE_VALUE+" = ?, "+
-            BID_SERV_RETURN_VALUE+" = ?, "+BID_SERV_RESULT_VALUE+" = ? WHERE "+BID_ID_VALUE+" = ?";
+            BID_SERV_RETURN_VALUE+" = ?, "+BID_SERV_RESULT_VALUE+" = ? WHERE "+BID_ID_SERVICE_VALUE+" = ?";
     private static final String UPDATE_BID_FINAL_QUERY = "UPDATE "+TABLE_FINAL_NAME+" SET "+BID_CLIENT_RESULT_VALUE+" = ?, "+
-            BID_DECL_NAME_VALUE+" = ?, "+BID_OFFICE_NAME_VALUE+" = ?, "+BID_NOTES_VALUE+" = ? WHERE "+BID_ID_VALUE+" = ?";
+            BID_DECL_NAME_VALUE+" = ?, "+BID_OFFICE_NAME_VALUE+" = ?, "+BID_NOTES_VALUE+" = ? WHERE "+BID_ID_FINAL_VALUE+" = ?";
     private static final String GET_BY_DECLARATION_QUERY = "SELECT * FROM "+TABLE_MAIN_NAME+" m JOIN "+TABLE_DIAGNOSTIC_NAME+
             "d ON m."+BID_ID_VALUE+" = d."+BID_ID_DIAG_VALUE+" JOIN "+TABLE_SERVICE_NAME+" s ON m."+BID_ID_VALUE+" = s."+BID_ID_SERVICE_VALUE+
             " JOIN "+TABLE_FINAL_NAME+" f ON m."+BID_ID_VALUE+" = f."+BID_ID_FINAL_VALUE+" WHERE f."+BID_DECL_NAME_VALUE+" = ?";
@@ -84,9 +89,18 @@ public class BidDaoImpl extends DAOCloseHelper implements BidDAO {
     private static final String GET_BY_GUARANTEE_QUERY = "SELECT * FROM "+TABLE_MAIN_NAME+" m JOIN "+TABLE_DIAGNOSTIC_NAME+
             "d ON m."+BID_ID_VALUE+" = d."+BID_ID_DIAG_VALUE+" JOIN "+TABLE_SERVICE_NAME+" s ON m."+BID_ID_VALUE+" = s."+BID_ID_SERVICE_VALUE+
             " JOIN "+TABLE_FINAL_NAME+" f ON m."+BID_ID_VALUE+" = f."+BID_ID_FINAL_VALUE+" WHERE d."+BID_GUARANTEE_VALUE+" = ?";
+    private static final String GET_BY_CURRENT_STATE_QUERY = "SELECT "+BID_ID_VALUE+" FROM "+BID_STATE_TABLE+" b WHERE "+BID_DATE_CHANGED_VALUE+" = "+
+            "(SELECT MAX("+BID_DATE_CHANGED_VALUE+") FROM "+BID_STATE_TABLE+" f WHERE f."+BID_ID_VALUE+" = b."+BID_ID_VALUE+") AND "+STATE_ID_VALUE+" = ?";
 
-    //ToDO: Запрос на поиск заявок по текущему статусу (сначала получить надо текущие статусы)
+    /*
+    SELECT  `bid_id` ,  `bid_state` ,  `date_changed`
+FROM test b
+WHERE date_changed = (
+SELECT MAX(  `date_changed` )
+FROM test f
+WHERE f.bid_id = b.bid_id )
 
+     */
     private ComponentDAO componentDAO;
     private ClientDAO clientDAO;
     private StateDAO stateDAO;
@@ -319,36 +333,251 @@ public class BidDaoImpl extends DAOCloseHelper implements BidDAO {
 
     @Override
     public int updateBid(Bid bid) throws DBException {
-        return 0;
+        int result = 0;
+        try
+        {
+            dbManager.commit();
+            updateBidMain(bid);
+            updateBidDiagnostic(bid);
+            updateBidService(bid);
+            result = updateBidFinal(bid);
+            dbManager.commit();
+        }
+        catch (DBException ex)
+        {
+            dbManager.rollback();
+            throw ex;
+        }
+        return result;
+    }
+
+    private int updateBidFinal(Bid bid) throws DBException {
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(UPDATE_BID_FINAL_QUERY);
+            preparedStatement.setString(1, bid.getClientResult());
+            preparedStatement.setString(2, bid.getDeclarationNumber());
+            preparedStatement.setString(3, bid.getOfficeNumber());
+            preparedStatement.setString(4, bid.getFinalNotes());
+            preparedStatement.setInt(5, bid.getId());
+            result = preparedStatement.executeUpdate();
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        return result;
+    }
+
+    private void updateBidService(Bid bid) throws DBException {
+        PreparedStatement preparedStatement = null;
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(UPDATE_BID_SERVICE_QUERY);
+            preparedStatement.setDate(1, new java.sql.Date(bid.getServiceIssueDate().getTime()));
+            preparedStatement.setDate(2, new java.sql.Date(bid.getServiceReturnDate().getTime()));
+            preparedStatement.setString(3, bid.getServiceResult());
+            preparedStatement.setInt(4, bid.getId());
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+    }
+
+    private void updateBidDiagnostic(Bid bid) throws DBException {
+        PreparedStatement preparedStatement = null;
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(UPDATE_BID_DIAGNOSTIC_QUERY);
+            preparedStatement.setDate(1, new java.sql.Date(bid.getDiagnosticIssueDate().getTime()));
+            preparedStatement.setDate(2, new java.sql.Date(bid.getServiceReturnDate().getTime()));
+            preparedStatement.setString(3, bid.getDiagnosticResult());
+            preparedStatement.setInt(4, getGuaranteeValue(bid.isGuarantee()));
+            preparedStatement.setInt(5, bid.getTermToService());
+            preparedStatement.setInt(6, bid.getId());
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+    }
+
+    private void updateBidMain(Bid bid) throws DBException {
+        PreparedStatement preparedStatement = null;
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(UPDATE_BID_MAIN_QUERY);
+            preparedStatement.setDate(1, new java.sql.Date(bid.getRegisterDate().getTime()));
+            preparedStatement.setInt(2, bid.getProductType().getId());
+            preparedStatement.setString(3, bid.getSerialNumber());
+            preparedStatement.setString(4, bid.getDefect());
+            preparedStatement.setInt(5, bid.getId());
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeStatement(preparedStatement);
+        }
     }
 
     @Override
     public List<Bid> getBidsOrderById() throws DBException {
-        return null;
+        ResultSet resultSet = dbManager.execSQL(GET_ALL_QUERY);
+        List<Bid> bids = new ArrayList<Bid>();
+        try
+        {
+            while(resultSet.next())
+            {
+                bids.add(getBidEntity(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+        }
+        return bids;
     }
 
     @Override
     public List<Bid> getByDate(Date date) throws DBException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Bid> bids = new ArrayList<Bid>();
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_BY_DATE_QUERY);
+            preparedStatement.setDate(1, new java.sql.Date(date.getTime()));
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                bids.add(getBidEntity(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+            closeStatement(preparedStatement);
+        }
+        return bids;
     }
 
     @Override
     public List<Bid> getByClient(Client client) throws DBException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Bid> bids = new ArrayList<Bid>();
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_BY_CLIENT_QUERY);
+            preparedStatement.setInt(1, client.getId());
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                bids.add(getBidEntity(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+            closeStatement(preparedStatement);
+        }
+        return bids;
     }
 
     @Override
     public List<Bid> getByGuarantee(Boolean guarantee) throws DBException {
-        return null;
+        int guaranteeValue = getGuaranteeValue(guarantee);
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Bid> bids = new ArrayList<Bid>();
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_BY_GUARANTEE_QUERY);
+            preparedStatement.setInt(1, guaranteeValue);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                bids.add(getBidEntity(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+            closeStatement(preparedStatement);
+        }
+        return bids;
     }
 
     @Override
     public Bid getByDeclaration(String declarationNumber) throws DBException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Bid bid = null;
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_BY_DECLARATION_QUERY);
+            preparedStatement.setString(1, declarationNumber);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                bid = getBidEntity(resultSet);
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+            closeStatement(preparedStatement);
+        }
+        return bid;
     }
 
     @Override
     public List<Bid> getByCurrentState(State orderState) throws DBException {
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Bid> bids = new ArrayList<Bid>();
+        try
+        {
+            preparedStatement = dbManager.preparedStatement(GET_BY_CURRENT_STATE_QUERY);
+            preparedStatement.setInt(1, orderState.getId());
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next())
+            {
+                bids.add(getBidEntity(resultSet));
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new DBException(ex.getMessage(), ex);
+        }
+        finally {
+            closeResultSet(resultSet);
+            closeStatement(preparedStatement);
+        }
+        return bids;
     }
+
 }
